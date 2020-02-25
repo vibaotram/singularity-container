@@ -1,7 +1,7 @@
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/4054)
 
-**singularity-container**
-Singularity images supporting [baseDmux workflow](https://github.com/vibaotram/baseDmux.git)
+# singularity-container
+## Singularity images supporting [baseDmux workflow](https://github.com/vibaotram/baseDmux.git)
 
 
 **Singularity.guppy-cpu-conda**
