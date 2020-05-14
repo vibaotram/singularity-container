@@ -66,8 +66,7 @@ From: tensorflow/tensorflow:1.13.1-gpu-py3
 
 
 #### INSTALL ONT_FAST5_API
-    python3 -m pip install git+https://github.com/nanoporetech/ont_fast5_api
-
+    pip install ont-fast5-api
 
 
 %environment
