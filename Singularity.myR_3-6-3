@@ -8,7 +8,7 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
 
 %labels
   Author Sebastien Cunnac
-  Version v0.0.1
+  Version v0.0.2
   R_Version 3.6.3
   build_date June 2020
   R_bioconductor True
@@ -24,8 +24,13 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
   apt-get install -y wget rsync git-lfs openssh-client
   
   # Specific libs for R packages to run
-  apt-get install -y libmagick++-dev libcairo2-dev libxt-dev \
+  apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
+      libcairo2-dev libxt-dev \
       libglu1-mesa-dev libgmp-dev libmpfr-dev libv8-dev
+ 
+  # cleaning up
+  apt-get autoremove --purge --yes
+  apt-get clean
 
   # installing packages from cran
   install2.r --error \
@@ -36,8 +41,7 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
       rgl \
       fs \
       BiocManager
-
-
+  
   # installing Bioconductor
   R --slave -e 'BiocManager::install(ask = FALSE)'
   
@@ -46,4 +50,3 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
   echo "## Build Date: $(date)"
   echo "## R sessionInfo:\n"
   R --slave -e 'sessionInfo()'
-
