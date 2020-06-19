@@ -24,7 +24,8 @@ From: rocker/tidyverse:latest #or: rocker/tidyverse:3.6.3
   apt-get install -y wget rsync git-lfs openssh-client
   
   # Specific libs for R packages to run
-  apt-get install -y libmagick++-dev libcairo2-dev libxt-dev \
+  apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
+      libcairo2-dev libxt-dev \
       libglu1-mesa-dev libgmp-dev libmpfr-dev libv8-dev
 
   # installing packages from cran
