@@ -33,4 +33,5 @@ MAINTAINER vibaotram
     #================================
     # INSTALL ONT_FAST5_API
     #================================
-    pip3 install git+https://github.com/nanoporetech/ont_fast5_api
+    # pip3 install git+https://github.com/nanoporetech/ont_fast5_api
+    pip install ont-fast5-api=3.1.3
