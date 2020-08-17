@@ -21,10 +21,16 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
 #  add-apt-repository multiverse
 
   # General Utilities
-  apt-get install -y wget rsync git-lfs openssh-client software-properties-common 
-  add-apt-repository ppa:webupd8team/java
-  apt-get install oracle-java8-installer
+  apt-get install -y wget rsync git-lfs openssh-client
 
+  # java-8
+  apt update
+  apt install -y apt-transport-https ca-certificates wget dirmngr gnupg software-properties-common
+  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+  add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+  apt update
+  apt install -y adoptopenjdk-8-hotspot
+  
   # Specific libs for R packages to run
   apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
       libcairo2-dev libxt-dev \
