@@ -21,13 +21,13 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
 #  add-apt-repository multiverse
 
   # General Utilities
-  apt-get install -y wget rsync git-lfs openssh-client
-  
+  apt-get install -y wget rsync git-lfs openssh-client openjdk-8-jdk openjdk-8-jre
+
   # Specific libs for R packages to run
   apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
       libcairo2-dev libxt-dev \
       libglu1-mesa-dev libgmp-dev libmpfr-dev libv8-dev
- 
+
   # cleaning up
   apt-get autoremove --purge --yes
   apt-get clean
@@ -41,10 +41,10 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
       rgl \
       fs \
       BiocManager
-  
+
   # installing Bioconductor
   R --slave -e 'BiocManager::install(ask = FALSE)'
-  
+
   # Display versions
   echo '############################################'
   echo "## Build Date: $(date)"
