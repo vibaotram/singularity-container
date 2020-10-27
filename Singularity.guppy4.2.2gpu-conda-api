@@ -37,7 +37,7 @@ From: tensorflow/tensorflow:1.13.1-gpu-py3
 
 
 #### GUPPY GPU
-    GUPPY_VERSION=3.6.0
+    GUPPY_VERSION=4.2.2
       apt-get update && \
       apt-get install --yes \
         apt-transport-https \
