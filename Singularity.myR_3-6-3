@@ -21,7 +21,7 @@ From: rocker/tidyverse:3.6.3 #or: rocker/tidyverse:latest
 #  add-apt-repository multiverse
 
   # General Utilities
-  apt-get install -y wget rsync git-lfs openssh-client build-essential libudunits2-dev
+  apt-get install -y wget rsync git-lfs openssh-client build-essential libudunits2-dev gdal-bin libgdal-dev
 
   # java-8
   apt update
