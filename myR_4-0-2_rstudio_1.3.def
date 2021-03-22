@@ -21,7 +21,7 @@ From: rocker/rstudio:4.0.2 #rocker/tidyverse:4.0.3 #or: rocker/tidyverse:latest
 #  add-apt-repository multiverse
 
   # General Utilities
-  apt-get install -y wget rsync git-lfs openssh-client libudunits2-dev gdal-bin libgdal-dev
+  apt-get install -y wget rsync git-lfs openssh-client build-essential libudunits2-dev gdal-bin libgdal-dev
 
   # Specific libs for R packages to run
   apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
