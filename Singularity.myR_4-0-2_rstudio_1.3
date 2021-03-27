@@ -21,12 +21,17 @@ From: rocker/rstudio:4.0.2 #rocker/tidyverse:4.0.3 #or: rocker/tidyverse:latest
 #  add-apt-repository multiverse
 
   # General Utilities
-  apt-get install -y wget rsync git-lfs openssh-client build-essential libudunits2-dev gdal-bin libgdal-dev
+  apt-get install -y wget rsync git-lfs openssh-client build-essential
 
   # Specific libs for R packages to run
   apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
       libcairo2-dev libxt-dev \
-      libglu1-mesa-dev libgmp-dev libmpfr-dev libv8-dev
+      libglu1-mesa-dev libgmp-dev libmpfr-dev libv8-dev \
+      libudunits2-dev gdal-bin libgdal-dev libglpk-dev
+
+  # cleaning up
+  apt-get autoremove --purge --yes
+  apt-get clean
 
   # installing packages from cran
   install2.r --error \
@@ -38,12 +43,11 @@ From: rocker/rstudio:4.0.2 #rocker/tidyverse:4.0.3 #or: rocker/tidyverse:latest
       fs \
       BiocManager
 
-  # cleaning up
-  apt-get autoremove --purge --yes
-  apt-get clean
-
   # installing Bioconductor
   R --slave -e 'BiocManager::install(ask = FALSE)'
+
+  # disable session timeout
+  echo "session-timeout-minutes=0" >> /etc/rstudio/rsession.conf
 
   # Display versions
   echo '############################################'
