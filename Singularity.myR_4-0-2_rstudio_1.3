@@ -27,7 +27,7 @@ From: rocker/rstudio:4.0.2 #rocker/tidyverse:4.0.3 #or: rocker/tidyverse:latest
   apt-get install -y texinfo texlive-latex-extra libmagick++-dev \
       libcairo2-dev libxt-dev \
       libglu1-mesa-dev libgmp-dev libmpfr-dev libv8-dev \
-      libudunits2-dev gdal-bin libgdal-dev libglpk-dev
+      libudunits2-dev gdal-bin libgdal-dev libglpk-dev libpoppler-cpp-dev
 
   # cleaning up
   apt-get autoremove --purge --yes
@@ -48,6 +48,8 @@ From: rocker/rstudio:4.0.2 #rocker/tidyverse:4.0.3 #or: rocker/tidyverse:latest
 
   # disable session timeout
   echo "session-timeout-minutes=0" >> /etc/rstudio/rsession.conf
+  echo "auth-timeout-minutes=0" >> /etc/rstudio/rserver.conf
+  rstudio-server restart
 
   # Display versions
   echo '############################################'
